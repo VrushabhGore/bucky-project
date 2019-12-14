@@ -1,0 +1,122 @@
+<% include partials/header %>
+
+<div class="container" id="container">
+
+    <div class="d-flex justify-content-center h-100">
+        <div class="card third">
+
+            <div class="card-header">
+                <br>
+                <h3>Update your Profile</h3>
+            </div>
+
+            <!-- <div class="card-body"> -->
+                <form action="/user/<%= user._id %>/update" class="create" method="post" id="create">
+                    <label for="title" style="font-size: 15pt;">First Name</label></br>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-user"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" id="title" name="newUser[firstname]"
+                            placeholder="firstname" value="<%= user.firstname %>" required>
+                    </div>
+
+            <!-- </div> -->
+            <label for="lastname" style="font-size: 15pt;">Last Name</label></br>
+
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-info-circle"></i>
+                    </span>
+                </div>
+                <input type="text" class="form-control" id="lastname" name="newUser[lastname]" placeholder="lastname"
+                    value="<%= user.lastname %>" required>
+            </div>
+            <label for="email" style="font-size: 15pt;">Email Id</label></br>
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-info-circle"></i>
+                    </span>
+                </div>
+                <input type="text" class="form-control" id="email" name="newUser[username]" placeholder="email"
+                    value="<%= user.username %>" required>
+            </div>
+            <label for="currentemployment" style="font-size: 15pt;">My Current Employment</label></br>
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-info-circle"></i>
+                    </span>
+                </div>
+                <textarea type="text" class="form-control" id="currentemployment" name="newUser[currentEmp]"
+                    placeholder=" Current Employment (EG: University of ..., Google Inc.)"
+                    required><%= user.currentEmp %></textarea>
+            </div>
+            <label for="study" style="font-size: 15pt;">Where I've Studied</label></br>
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-info-circle"></i>
+                    </span>
+                </div>
+                <textarea type="text" class="form-control" id="study" name="newUser[study]" placeholder="Please enter study and make sure to seperate them with pipe '|'"><%= user.study %></textarea>
+            </div>
+            <label for="publications" style="font-size: 15pt;">My Publications</label></br>
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-info-circle"></i>
+                    </span>
+                </div>
+                <textarea type="text" class="form-control" id="publications" name="newUser[publications]"
+                    placeholder="Please enter publications and make sure to seperate them with pipe '|'"
+                    ><%= user.publications %></textarea>
+            </div>
+            <label for="research" style="font-size: 15pt;">My Research</label></br>
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-info-circle"></i>
+                    </span>
+                </div>
+                <textarea type="text" class="form-control" id="research" name="newUser[research]"
+                    placeholder="Please enter research and make sure to seperate them with pipe '|'"
+                     ><%= user.research %></textarea>
+            </div>
+            <label for="activity" style="font-size: 15pt;">My Activities</label></br>
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-info-circle"></i>
+                    </span>
+                </div>
+                <textarea type="text" class="form-control" id="activity" name="newUser[activity]"
+                    placeholder="Please enter activity and make sure to seperate them with pipe '|'"
+                     ><%= user.activity %></textarea>
+            </div>
+            <label for="membership" style="font-size: 15pt;">My Memberships</label></br>
+            <div class="input-group form-group">  
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fas fa-info-circle"></i>
+                    </span>
+                </div>
+                <textarea type="text" class="form-control" id="membership" name="newUser[membership]"
+                    placeholder="Please enter membership and make sure to seperate them with pipe '|'"
+                    ><%= user.membership %></textarea>
+            </div>
+
+            <div class="form-group">
+                <input class="btn float-right login_btn" type="submit" value="Update!">
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+<% include partials/footer %>

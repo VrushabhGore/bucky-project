@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Researcher List</title>
+    <meta charset="utf-8">
+    <meta
+    content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="/views/main.css" type="text/css">
+    <!--Fontawesome CDN-->
+    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand active" href="/">Researcher List</a>
+        </div>
+        <% if(author.id != "null"){ console.log(author);%>
+          <ul class="navbar-nav"> <li class="nav-item">  
+            <span class="input-group-text"> <a href="/update/<%= author.id%>"><i class="fas fa-user"> <%= author.authorname %> </i></a </span> 
+          </li>
+          </ul>
+        <form action="/signout" class="signout" method="post">
+          <ul class="navbar-nav navbar-right"> <li><input class="btn btn-primary btn-block" name="submit" type="submit" value="Signout"></li> </ul>
+        </form>
+        <%}else{ %>
+          <ul class="navbar-nav"> <li class="nav-item">  
+            <span class="input-group-text"><i class="fas fa-user"> <%= author.authorname %> </i></a> </span> 
+          </li>
+          </ul>
+          <ul class="navbar-nav navbar-right"> <li><a href="/login" class="btn btn-primary btn-block">Login</a></li> </ul>
+        <%} %>
+      </div>
+    </nav>

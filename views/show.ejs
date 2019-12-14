@@ -1,0 +1,84 @@
+<% include partials/header %>
+
+<div class="container" id="container">
+  <div class="card cards_bg">
+    <div class="card-body">
+      <h2>Contact Information</h2><br>
+      <h3 class="card-title"> Name: <%= user.firstname %> <%= user.lastname %> </h3>
+      <h3 class="card-text"> Email Address: <%= user.username %> </h3>
+      <h3 class="card-text"> Current Employment: <%= user.currentEmp %> </p>
+        <br>
+        <hr><br>
+
+
+        <h2>Where I've Studied</h2>
+        <% user.study.forEach((data)=>{ %>
+        <h3>
+          <ul class="card-text" style="list-style-type:square">
+            <li> <%= data %> </li>
+          </ul>
+        </h3>
+        <% }) %>
+        <br>
+        <hr><br>
+
+
+        <h2>My Publications</h2>
+
+        <% user.publications.forEach((data)=>{ %>
+        <h3>
+          <ul class="card-text" style="list-style-type:square">
+            <li><%= data %> </li>
+          </ul>
+        </h3>
+        <% }) %>
+        <br>
+        <hr><br>
+
+
+        <h2>My Research</h2>
+
+        <% user.research.forEach((data)=>{ %>
+        <h3>
+          <ul class="card-text" style="list-style-type:square">
+            <li><%= data %> </li>
+          </ul>
+        </h3>
+        <% }) %>
+        <br>
+        <hr><br>
+
+
+        <h2>My Activities</h2>
+
+        <% user.activity.forEach((data)=>{ %>
+        <h3>
+          <ul class="card-text" style="list-style-type:square">
+            <li><%= data %> </li>
+          </ul>
+        </h3>
+        <% }) %>
+        <br>
+        <hr><br>
+
+
+        <h2>My Memberships</h2>
+        <% user.membership.forEach((data)=>{ %>
+        <h3>
+          <ul class="card-text" style="list-style-type:square">
+            <li><%= data %> </li>
+          </ul>
+        </h3>
+        <% }) %>
+
+        <% if (user.id == author.id){ %>
+        <form action="/update/<%= user.id %>" method="get">
+          <input class="btn float-right updateBtn" type="submit" value="Update">
+    </div>
+    </form>
+    <% }%>
+  </div>
+</div>
+</div>
+
+<% include partials/footer %>

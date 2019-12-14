@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sign up</title>
+        <meta charset="utf-8">
+        <meta
+        content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+        <!-- Bootstrap CSS -->
+        <link
+        crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+        <!--Fontawesome CDN-->
+        <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" rel="stylesheet">
+
+        <link href="./views/main.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <div class="container" id="container">
+
+            <div class="d-flex justify-content-center h-100">
+                <div class="card second">
+                   
+                    <div class="card-header">
+                        <br><h3>Sign Up</h3>
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <form action="/signup" class="signup" method="post">
+
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control" id="firstname" name="user[firstname]" placeholder="Firstname">
+                            </div>
+
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control" id="lastname" name="user[lastname]" placeholder="Lastname" required>
+                            </div>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control" id="username" name="user[username]" placeholder="Email" required>
+                            </div>
+
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                </div>
+                                <input type="password" class="form-control" id="password" name="user[password]" placeholder="Create password" required>
+                            </div>
+
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <!-- <i class="fas fa-lock"></i> -->
+                                        <i id="pass-status" class="fa fa-eye" aria-hidden="true" onClick="viewPassword()"></i>
+                                    </span>
+                                </div>
+                                <input type="password" class="form-control" id="confirmPass" name="confirmPass" placeholder="Confirm password" required>
+                            </div>
+                            <% if(popup.duplicateUser){ %>
+                            <p class="popup">Already have an account with this username!</p>
+                            <%}%>
+
+                            <% if(popup.confPass){ %>
+                            <p class="popup">Password do not match!</p>
+                            <%}%>
+
+                           <script>
+                           function showPass() {
+                               var x = document.getElementById("password");
+                               if (x.type == "password") {
+                                    x.type = "text";
+                                } else {
+                                    x.type = "password";
+                                }
+                            } 
+                            function viewPassword(){
+                                var passwordInput = document.getElementById('confirmPass');
+                                var passStatus = document.getElementById('pass-status');
+                                
+                                if (passwordInput.type == 'password'){
+                                    passwordInput.type='text';
+                                    passStatus.className='fa fa-eye-slash';
+                                }
+                                else{
+                                    passwordInput.type='password';
+                                    passStatus.className='fa fa-eye';
+                                }
+                            }
+                            </script>
+
+                            <div class="row align-items-center remember">
+                                <input type="checkbox" onclick="showPass()">Show Password
+                            </div>
+                            
+                            <div class="form-group">
+                                <br><input class="btn btn-primary btn-block login_btn" name="submit" type="submit" value="Create Account">
+                            </div>                            
+                        </form>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-center links">
+                            <p>Have an account? </p>
+                            <a href="/login">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

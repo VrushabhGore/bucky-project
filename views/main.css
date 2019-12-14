@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+html,body{
+    background-color: #b7cdff;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container{
+    height: 100%;
+    align-content: center;
+}
+
+#blog-h1{
+    color:white;
+}
+
+.first{
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+.second{
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+.third{
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 750px;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+
+.card-header h3{
+    color: white;
+    font-weight: bold;
+}
+.card-footer{
+    color: white;
+}
+.card-footer a{
+    margin-left: 20px;
+}
+
+.input-group-prepend span{
+    width: 40px;
+    background-color: #FFC312;
+    color: black;
+    border:0 !important;
+}
+input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+textarea:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+
+.fa {
+    color:black;
+    font-size:18px;
+    margin-left: -2px;
+    position: relative;
+  }
+
+.remember{
+    color: white;
+}
+.remember input{
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.login_btn{
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+    border-style: none;
+}
+.login_btn:hover{
+    color: black;
+    background-color: rgb(207, 154, 7);
+}
+.popup, .popup1, .popup2{
+    color: red;
+}
+
+.btn-space {
+    margin-left: 5px;
+}
+
+.updateBtn{
+    color: darkslategray;
+    margin: 13px 12px 12px 10px;
+    background-color: #FFC312;
+    width: 150px;
+    border-style: solid;
+    border-color: darkslategray;
+    border-radius: 12px;
+    font-size: 16pt;
+    font-weight: bold;
+}
+.updateBtn:hover{
+    color: black;
+    background-color: rgb(207, 154, 7);
+}
+
+.cards_bg{
+    background-color: #b7cdff;
+}
+
+.homePic {
+    display: block;
+    max-width:180px;
+    max-height:150px;
+    min-height:150px;
+    width: auto;
+    height: auto;
+}
+
+.homepic2 {
+    max-width: 660px;
+    max-height: 660px;
+}
+
+.black-text{
+    color:black;
+}
+
